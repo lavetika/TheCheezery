@@ -1,7 +1,6 @@
 package castro.diana.thecheezery
 
 import android.content.Context
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -10,6 +9,7 @@ import android.widget.BaseAdapter
 import android.widget.ImageView
 import android.widget.ListView
 import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
 
 class ProductsActivity : AppCompatActivity() {
     var coldDrinks = ArrayList<Product>()
@@ -24,11 +24,22 @@ class ProductsActivity : AppCompatActivity() {
         setContentView(R.layout.activity_products)
 
         addProcucts()
+        setButtons(intent.getStringExtra("type"))
+    }
 
+    fun setButtons(type: String?){
         var listview: ListView = findViewById(R.id.listView) as ListView
-        var adapter: ProductsAdapter = ProductsAdapter(this, coldDrinks)
-        listview.adapter = adapter
-
+        var adapter: ProductsAdapter
+        when(type){
+            "cold_drinks"->{ adapter = ProductsAdapter(this, coldDrinks)
+                listview.adapter = adapter}
+            "hot_drinks"->{adapter = ProductsAdapter(this, hotDrinks)
+                listview.adapter = adapter}
+            "sweets"->{adapter = ProductsAdapter(this, sweets)
+                listview.adapter = adapter}
+            "salties"->{adapter = ProductsAdapter(this, salties)
+                listview.adapter = adapter}
+        }
     }
 
     fun addProcucts(){
@@ -58,9 +69,6 @@ class ProductsActivity : AppCompatActivity() {
         salties.add(Product("Panini", R.drawable.hampanini, "Sandwich made with Italian bread  served warmed by grilling.", 4.0))
         salties.add(Product("Philly cheese steak", R.drawable.phillycheesesteak, "Smothered in grilled onions, green peppers, mushrooms, and Provolone.", 6.0))
         salties.add(Product("Nachos", R.drawable.nachos, "Tortilla chips layered with beef and   melted cheddar cheese. Served with fried beans, guacamole, pico de gallo, and sour topping.",  7.0))
-
-
-
 
     }
 
