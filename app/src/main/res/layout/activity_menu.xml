@@ -75,7 +75,7 @@
             />
 
         <Button
-            android:id="@+id/salties"
+            android:id="@+id/button_salties"
             android:text="@string/salties"
             android:textColor="@color/dusty_white"
             android:background="@drawable/second_gradiant"
@@ -88,7 +88,7 @@
             />
 
         <Button
-            android:id="@+id/combos"
+            android:id="@+id/button_combos"
             android:text="@string/combos"
             android:textColor="@color/dusty_white"
             android:background="@drawable/third_gradiant"
@@ -101,7 +101,7 @@
             />
 
         <Button
-            android:id="@+id/custom"
+            android:id="@+id/button_custom"
             android:text="@string/custom"
             android:textColor="@color/dusty_white"
             android:background="@drawable/third_gradiant"

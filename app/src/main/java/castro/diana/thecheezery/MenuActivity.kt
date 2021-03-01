@@ -11,11 +11,41 @@ class MenuActivity : AppCompatActivity() {
         setContentView(R.layout.activity_menu)
 
         var btnCold: Button = findViewById(R.id.button_cold_drinks) as Button
+        var btnHot: Button = findViewById(R.id.button_hot_drinks) as Button
+        var btnSweets: Button = findViewById(R.id.button_sweets) as Button
+        var btnSalties: Button = findViewById(R.id.button_salties) as Button
+        var btnCombos: Button = findViewById(R.id.button_combos) as Button
+        var btnCustom: Button = findViewById(R.id.button_custom) as Button
+
 
         btnCold.setOnClickListener {
             var intent: Intent = Intent(this, ProductsActivity::class.java)
             startActivity(intent)
+        }
 
+        btnHot.setOnClickListener {
+            var intent: Intent = Intent(this, ProductsActivity::class.java)
+            startActivity(intent)
+        }
+
+        btnSweets.setOnClickListener {
+            var intent: Intent = Intent(this, ProductsActivity::class.java)
+            startActivity(intent)
+        }
+
+        btnSalties.setOnClickListener {
+            var intent: Intent = Intent(this, ProductsActivity::class.java)
+            startActivity(intent)
+        }
+
+        btnCombos.setOnClickListener {
+            var intent: Intent = Intent(this, ProductsActivity::class.java)
+            startActivity(intent)
+        }
+
+        btnCustom.setOnClickListener {
+            var intent: Intent = Intent(this, ProductsActivity::class.java)
+            startActivity(intent)
         }
     }
 }

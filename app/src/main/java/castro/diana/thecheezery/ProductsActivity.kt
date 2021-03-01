@@ -13,12 +13,14 @@ import android.widget.TextView
 
 class ProductsActivity : AppCompatActivity() {
     var coldDrinks = ArrayList<Product>()
+    var hotDrinks = ArrayList<Product>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_products)
 
         addProcucts()
+
         var listview: ListView = findViewById(R.id.listView) as ListView
         var adapter: ProductsAdapter = ProductsAdapter(this, coldDrinks)
         listview.adapter = adapter
@@ -32,6 +34,18 @@ class ProductsActivity : AppCompatActivity() {
         coldDrinks.add(Product("Matcha Latte", R.drawable.matcha, "Leafy taste of matcha green tea powder with creamy milk and a little sugar for a flavor balance that will leave you feeling ready and raring to go.", 4.0))
         coldDrinks.add(Product("Oreo Milkshake", R.drawable.oreomilkshake, "Chocolate ice cream, and oreo cookies. Topped with whipped cream with cocoa and chocolate syrup.", 7.0))
         coldDrinks.add(Product("Peanut Milkshake", R.drawable.peanutmilkshake, "Vanilla ice cream, mixed with peanut butter and chocolate.", 7.0))
+
+
+        hotDrinks.add((Product("Latte", R.drawable.latte, "Coffee drink made with espresso and steamed milk.", 6.0)))
+        hotDrinks.add(Product("Hot Chocolate", R.drawable.hotchocolate, "Heated drink consisting of shaved chocolate, topped with marshmallows.", 5.0))
+        hotDrinks.add(Product("Espresso", R.drawable.espresso, "Full-flavored, concentrated form of coffee.", 4.0))
+        hotDrinks.add(Product("Chai Latte", R.drawable.chailatte, "Spiced tea concentrate with milk.",6.0))
+        hotDrinks.add(Product("Capuccino", R.drawable.capuccino, "A cappuccino is an espresso-based coffee drink, prepared with steamed foam.", 7.0))
+        hotDrinks.add(Product("American Coffee", R.drawable.americano, "Espresso with hot water.", 2.0))
+
+        
+
+
     }
 
     private class ProductsAdapter:BaseAdapter{
