@@ -29,16 +29,21 @@ class ProductsActivity : AppCompatActivity() {
 
     fun setButtons(type: String?){
         var listview: ListView = findViewById(R.id.listView) as ListView
+        var title: ImageView = findViewById(R.id.title) as ImageView
         var adapter: ProductsAdapter
         when(type){
             "cold_drinks"->{ adapter = ProductsAdapter(this, coldDrinks)
-                listview.adapter = adapter}
+                listview.adapter = adapter
+                title.setImageResource(R.drawable.colddrinks)}
             "hot_drinks"->{adapter = ProductsAdapter(this, hotDrinks)
-                listview.adapter = adapter}
+                listview.adapter = adapter
+                title.setImageResource(R.drawable.hotdrinks)}
             "sweets"->{adapter = ProductsAdapter(this, sweets)
-                listview.adapter = adapter}
+                listview.adapter = adapter
+                title.setImageResource(R.drawable.sweets)}
             "salties"->{adapter = ProductsAdapter(this, salties)
-                listview.adapter = adapter}
+                listview.adapter = adapter
+                title.setImageResource(R.drawable.salties)}
         }
     }
 
